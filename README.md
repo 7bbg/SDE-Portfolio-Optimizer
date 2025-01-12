@@ -10,6 +10,7 @@ This project implements a portfolio optimization model that incorporates stochas
 - Implementation of optimal stopping theory to rebalance the portfolio.
 - Risk-neutral pricing for derivative options.
 
+
 ##
 1. Clone the repository:
 ```bash
@@ -43,3 +44,5 @@ $ npx electron .
         ` python -m unittest discover -s tests`
 
 
+## Demo (In progress)
+![Desktop_App_Demo](public/demo_test.png)
