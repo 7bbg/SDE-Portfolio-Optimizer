@@ -1,0 +1,267 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container for the entire layout */
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 20px;
+    height: 100%;
+}
+
+/* Sidebar Styling */
+.inputs {
+    flex-basis: 280px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    position: sticky;
+    top: 20px;
+    overflow-y: auto; /* Note: If content overflow allow vertical scroll*/
+}
+
+.inputs h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.inputs div {
+    margin-bottom: 20px;
+}
+
+.inputs label {
+    font-size: 1rem;
+    color: #7f8c8d;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.inputs input, .inputs select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.inputs input:focus, .inputs select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.inputs button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.inputs button:hover {
+    background-color: #2980b9;
+}
+
+/* Results Section */
+#results {
+    margin-top: 30px;
+}
+
+#results h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+#results p {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+/* Chart Container */
+.chart-container {
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.chart-container canvas {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;  
+    height: auto;
+}
+
+
+
+/* Ensuring chart containers don't overflow */
+.chart-container {
+    max-height: 100%;  
+    overflow: auto;  /* Note: If content overflow allow vertical scroll*/
+}
+
+canvas {
+    max-height: 100%;
+}
+
+/* Results Section Styling */
+#results {
+    background-color: #ebf1ee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: #0a0808;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Title Styling */
+#results h2 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Paragraph Styling */
+#results p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin: 10px 0;
+    line-height: 1.6;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+#results p span {
+    font-weight: 700;
+    color: #3498db;
+}
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inputs, .chart-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .inputs {
+        position: relative;
+        top: unset;
+        box-shadow: none;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .inputs {
+        padding: 20px;
+    }
+
+    .inputs h2 {
+        font-size: 1.5rem;
+    }
+
+    .inputs input, .inputs select {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .inputs button {
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    #results h2 {
+        font-size: 1.4rem;
+    }
+
+    #results p {
+        font-size: 0.95rem;
+    }
+
+    canvas {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inputs h2 {
+        font-size: 1.4rem;
+    }
+
+    .inputs label {
+        font-size: 0.9rem;
+    }
+
+    .inputs input, .inputs select {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .inputs button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    #results h2 {
+        font-size: 1.2rem;
+    }
+
+    #results p {
+        font-size: 0.9rem;
+    }
+
+    canvas {
+        height: 250px;
+    }
+}
